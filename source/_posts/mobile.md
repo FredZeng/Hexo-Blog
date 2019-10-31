@@ -234,4 +234,10 @@ body {
 }
 ```
 
+## 微信中的一些坑
+
+### 1. iframe 导致的一些问题
+
+微信浏览器中使用`iframe`，修改`iframe`的src会导致`history` + 1
+
 To Be Continue...
