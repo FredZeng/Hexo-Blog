@@ -8,7 +8,7 @@ subtitle:
 description: FredZeng's Blog
 keywords: FredZeng,FredTsang,Blog,TF5,TECH F5VE
 author: FredZeng
-language: en
+language: zh-cn
 timezone:
 
 # URL
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: even
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
