@@ -53,3 +53,6 @@ jobs:
 1. [Creating a personal access token](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) 创建自己的 access token，一般勾选上 `repo` 就可以了；请务必复制，保存好生成的 `token`。
 2. [Encrypted secrets](https://docs.github.com/cn/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) 将创建好的 `token` 添加到项目的 **Actions secrets** 中，这样你才能在 action 里面用到上述的 `${{ secrets.ACCESS_TOKEN }}`。
 3. 🎉🎉🎉 你已经完成了所有前置步骤，可以不用再手动部署了
+
+### 其他
+也可查看官方文档 [将 Hexo 部署到 GitHub Pages](https://hexo.io/zh-cn/docs/github-pages) 实现自动化部署。
