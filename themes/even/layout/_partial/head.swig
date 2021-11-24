@@ -32,7 +32,7 @@
 {%- endif -%}
 
 {#- Theme styling -#}
-<link rel="stylesheet" type="text/css" href="{{ url_for('css/style.css') }}?v={{ theme.version }}" />
+<link rel="stylesheet" type="text/css" href="{{ config.marked.baseUrl }}{{ url_for('css/style.css') }}?v={{ theme.version }}" />
 
 {#- Analytics and push -#}
 {%- if not env.debug -%}
