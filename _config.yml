@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: FredZeng
+title: FredTsang
 subtitle:
-description: FredZeng's Blog
+description: FredTsang's Blog
 keywords: FredZeng,FredTsang,Blog,TF5,TECH F5VE
-author: FredZeng
+author: FredTsang
 language: zh-cn
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://cdn.jsdelivr.net/gh/FredZeng/FredZeng.github.io@master
+url: https://fredzeng.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -72,6 +72,9 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+marked:
+  baseUrl: https://cdn.jsdelivr.net/gh/FredZeng/FredZeng.github.io@master
+  lazyload: true
 ## Themes: https://hexo.io/themes/
 mode: default
 theme: even
