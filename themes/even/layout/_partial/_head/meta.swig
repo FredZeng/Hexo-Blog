@@ -14,10 +14,14 @@
 {#- Website description -#}
 {%- if page.description -%}
   <meta name="description" content="{{ page.description }}"/>
+  <meta property="og:description" content="{{ page.description }}"/>
 {%- elif page.title -%}
   <meta name="description" content="{{ page.title }}"/>
+  <meta property="og:title" content="{{ page.title }}"/>
+  <meta property="og:description" content="{{ page.title }}"/>
 {%- elif config.description -%}
   <meta name="description" content="{{ config.description }}"/>
+  <meta property="og:description" content="{{ config.description }}"/>
 {%- endif -%}
 
 {#- Website keywords -#}
