@@ -80,6 +80,9 @@ mode: default
 theme: even
 toc: true
 since: 2019
+menu:
+  Home: /
+  Archives: /archives/
 social:
   github: https://github.com/FredZeng
 
