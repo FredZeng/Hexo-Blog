@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.9.1/vconsole.min.js"></script>
+  <script>
+    // init vConsole
+    var vConsole = new VConsole();
+    console.log('Hello world');
+  </script>
+</head>
+
+<body>
+  <script>
+    // check native support
+    function supportNativeMediaPlayback(mimeType) {
+      const videoElement = window.document.createElement('video');
+      let canPlay = videoElement.canPlayType(mimeType);
+      return canPlay === 'probably' || canPlay == 'maybe';
+    }
+
+    // check MediaSource support
+    function getMediaSource() {
+      return window.MediaSource || window.WebKitMediaSource;
+    }
+
+    // check SourceBuffer support
+    function getSourceBuffer() {
+      return window.SourceBuffer || window.WebKitSourceBuffer;
+    }
+
+    function isSupported() {
+      const mediaSource = getMediaSource();
+      if (!mediaSource) {
+        return false;
+      }
+      const sourceBuffer = getSourceBuffer();
+      // Check H264 support
+      const isTypeSupported =
+        mediaSource &&
+        typeof mediaSource.isTypeSupported === 'function' &&
+        mediaSource.isTypeSupported('video/mp4; codecs="avc1.42E01E,mp4a.40.2"');
+
+      // if SourceBuffer is exposed ensure its API is valid
+      // safari and old version of Chrome doe not expose SourceBuffer globally so checking SourceBuffer.prototype is impossible
+      const sourceBufferValidAPI =
+        !sourceBuffer ||
+        (sourceBuffer.prototype &&
+          typeof sourceBuffer.prototype.appendBuffer === 'function' &&
+          typeof sourceBuffer.prototype.remove === 'function');
+      return !!isTypeSupported && !!sourceBufferValidAPI;
+    }
+
+    console.log('Support built-in HLS:', supportNativeMediaPlayback('application/vnd.apple.mpegurl'));
+    console.log('Support MediaSource:', !!getMediaSource());
+    console.log('Support SourceBuffer:', !!getSourceBuffer());
+    console.log('Support MSE & H264:', !!isSupported());
+  </script>
+</body>
+
+</html>

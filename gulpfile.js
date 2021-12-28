@@ -45,5 +45,11 @@ function minImage(cb) {
     cb();
 }
 
-exports.build = parallel(minCss, minJs, minHtml, minImage);
-exports.default = parallel(minCss, minJs, minHtml, minImage);
+function copyAssets(cb) {
+    src('./assets/**')
+        .pipe(dest('./public'));
+    cb();
+}
+
+exports.build = parallel(minCss, minJs, minHtml, minImage, copyAssets);
+exports.default = parallel(minCss, minJs, minHtml, minImage, copyAssets);
