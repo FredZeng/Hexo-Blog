@@ -34,3 +34,13 @@ fi
 ```bash
 git checkout --orphan <branch>
 ```
+
+3. 添加/修改远程仓库地址
+
+```bash
+# 添加仓库地址
+git remote add [shortname] [url]
+
+# 修改仓库地址
+git remote set-url [shortname] [url]
+```
