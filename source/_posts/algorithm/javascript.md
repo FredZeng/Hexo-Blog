@@ -138,3 +138,27 @@ arr // ['hello']
 
 [2].concat({a: 1}, {b: 2}) // [2, {a: 1}, {b: 2}]
 ```
+
+9. 易混淆知识点
+
+- `in` 和 `hasOwnProperty`
+
+```js
+var obj = {};
+
+'toString' in obj // true
+
+obj.hasOwnProperty('toString') // false
+```
+
+- `typeof`
+
+```js
+typeof 1 // 'number'
+typeof false // 'boolean'
+typeof 'abbc' // 'string'
+typeof [] // 'object'
+typeof null // 'object'
+typeof function() {} // 'function'
+typeof undefined // 'undefined'
+```
