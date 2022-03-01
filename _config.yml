@@ -83,7 +83,8 @@ since: 2019
 menu:
   Home: /
   Archives: /archives/
-  Tags: /tags/
+  Categories: /categories/
+  # Tags: /tags/
 social:
   github: https://github.com/FredZeng
 

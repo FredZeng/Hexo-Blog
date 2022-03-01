@@ -1,7 +1,7 @@
 ---
 title: JavaScript 算法常用语法
 date: 2022-02-27
-tags:
+categories:
 - algorithm
 ---
 

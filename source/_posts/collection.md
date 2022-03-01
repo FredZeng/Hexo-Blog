@@ -1,7 +1,7 @@
 ---
 title: 阅读清单
 date: 2022-01-06
-tags:
+categories:
 - media
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: node.js 模块机制
-tags: node
+categories:
+- node
 ---
 
 ## node.js 模块机制
