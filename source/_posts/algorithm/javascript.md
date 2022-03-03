@@ -125,21 +125,32 @@ numbers.sort((a, b) => a - b);
 numbers.sort((a, b) => b - a);
 ```
 
-8. 合并数组 `Array.prototype.concat()`
+8. `Array.prototype.reverse()`
+
+`reverse` 方法用于颠倒排列数组元素，返回改变后的数组。注意，该方法将**改变原数组**。
+
+```js
+var a = ['a', 'b', 'c'];
+
+a.reverse() // ["c", "b", "a"]
+a // ["c", "b", "a"]
+```
+
+9. 合并数组 `Array.prototype.concat()`
 
 `concat` 方法用于多个数组的合并。它将新数组的成员，添加到原数组成员的后部，然后返回一个新数组，**原数组不变**。
 
 ```js
 let arr = ['hello'];
 
-arr..concat(['world'], ['!']) // ["hello", "world", "!"]
+arr.concat(['world'], ['!']) // ["hello", "world", "!"]
 
 arr // ['hello']
 
 [2].concat({a: 1}, {b: 2}) // [2, {a: 1}, {b: 2}]
 ```
 
-9. 易混淆知识点
+10. 易混淆知识点
 
 - `in` 和 `hasOwnProperty`
 
