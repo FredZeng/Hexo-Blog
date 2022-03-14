@@ -64,3 +64,12 @@ ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
 | pict_type | 帧类型（如：I、P、B） | I |
 
 IDR frame: pict_type=I 且 key_frame=1 时，表示这是 IDR frame.
+
+
+6. 增大/减小 MP4 的音量
+
+将 input.mp4 文件的音量调大 10dB，输出到 output.mp4 文件中。
+
+```bash
+ffmpeg -i input.mp4 -vcodec copy -af "volume=10dB" output.mp4
+```
