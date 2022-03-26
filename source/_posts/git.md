@@ -44,3 +44,21 @@ git remote add [shortname] [url]
 # 修改仓库地址
 git remote set-url [shortname] [url]
 ```
+
+4. 全局配置 GitHub token
+
+GitHub 不再支持 "用户名 + 密码" 的登录方式，推荐使用 GitHub token 来进行鉴权；
+给每个 clone 下来的项目单独配置 token 过于繁琐，可以使用以下方式全局配置 GitHub token。
+
+方法一：
+
+```bash
+git config --global github.token <你的 GitHub token>
+git config --global github.user <github上的用户名>
+```
+
+方法二：
+
+```bash
+git config --global url."https://<你的 GitHub token>@github.com".insteadOf "https://github.com"
+```
