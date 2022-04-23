@@ -1,6 +1,8 @@
 ---
 title: Webpack 杂记
 date: 2022-03-28
+categories:
+- webpack
 ---
 
 ## Webpack 杂记
@@ -23,3 +25,39 @@ Regular expression: /^.*/
 而后，webpack 会将目录（`@/common/themes`）下所有符合正则表达式（`/^.*/`）的模块都打包到一起；因此这种方式，可能会引入一些不必要的模块。
 
 对于`require()`的引入方式，可通过设置`require.context()`解决；对于`import()`方式，可以使用 webpack 的[内联注释](https://webpack.docschina.org/api/module-methods/#magic-comments)解决该问题。
+
+2. less webpack 配置
+
+使用 `less-loader` 预编译 `*.less` 文件，而后使用 `cssnano` postcss 插件压缩 css，使用 `autoprefixer` 插件兼容各浏览器 css prefix。
+
+```js
+// webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: process.env.NODE_ENV === 'production' ? {
+                plugins: [
+                  require('cssnano')({
+                    preset: 'default',
+                  }),
+                  'autoprefixer'
+                ]
+              } : undefined,
+            }
+          },
+          { loader: 'less-loader' }
+        ]
+      }
+    ]
+  }
+};
+```
