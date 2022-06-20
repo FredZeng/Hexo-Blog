@@ -96,3 +96,14 @@ marked:
 ## 更多姿势
 
 可以将仓库作为图床，而后通过 jsDelivr cdn 访问。
+
+
+## 遇到的一些小问题
+
+- 如何手动刷新 jsdelivr cdn 缓存？
+
+使用 `purge.jsdelivr.net` 替换 `cdn.jsdelivr.net` 来访问 cdn 地址，访问后即可刷新 cdn 资源。
+
+```txt
+https://purge.jsdelivr.net/gh/FredZeng/FredZeng.github.io@master/css/style.css?v=
+```
