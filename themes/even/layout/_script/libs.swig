@@ -16,3 +16,7 @@
     <script type="text/javascript" src="{{ config.marked.baseUrl }}{{ url_for('lib') }}/{{ lib }}"></script>
   {%- endif -%}
 {%- endfor -%}
+
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="{{ config.marked.baseUrl }}{{ url_for('js/src') }}/clipboard.min.js"></script>
+<script type="text/javascript" src="{{ config.marked.baseUrl }}{{ url_for('js/src') }}/clipboard-use.js"></script>
