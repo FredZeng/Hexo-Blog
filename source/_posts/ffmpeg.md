@@ -7,19 +7,29 @@ date: 2021-11-08
 
 ## ffmpeg 速记
 
-1. 将 `ts` 文件合并为 `mp4`
+1. 将视频转为浏览器可以播放的 mp4 视频
+
+```bash
+ffmpeg -i input.MP4 -c:v libx264 -c:a aac -s:v 1280x720 -movflags faststart output.mp4
+```
+
+- `-c:v libx264` 视频采用 h264 编码
+- `-c:a aac` 音频采用 aac(LC) 编码
+- `-s:v 1280x720` 视频分辨率调整为 1280x720（可选）
+
+2. 将 `ts` 文件合并为 `mp4`
 
 ```bash
 ffmpeg -i index.m3u8 -c copy output.mp4
 ```
 
-2. 将 `mp4` 的 `moov` 前移
+3. 将 `mp4` 的 `moov` 前移
 
 ```bash
 ffmpeg -i input.mp4 -c copy -movflags faststart output.mp4
 ```
 
-3. 抽取音视频文件中的 AAC 音频流
+4. 抽取音视频文件中的 AAC 音频流
 
 ```bash
 ffmpeg -i input.mp4 -vn -acodec copy output.aac
@@ -28,13 +38,13 @@ ffmpeg -i input.mp4 -vn -acodec copy output.aac
 - `-vn` 忽略视频流
 - `-an` 忽略音频流
 
-4. 以文件的形式保存 flv （直播）流
+5. 以文件的形式保存 flv （直播）流
 
 ```bash
 ffmpeg -i http://xxx.com/live.flv -c copy -f flv output.flv
 ```
 
-5. 以 CSV 格式输出视频流的帧信息
+6. 以 CSV 格式输出视频流的帧信息
 
 ```bash
 ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
@@ -66,7 +76,7 @@ ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
 IDR frame: pict_type=I 且 key_frame=1 时，表示这是 IDR frame.
 
 
-6. 增大/减小 MP4 的音量
+7. 增大/减小 MP4 的音量
 
 将 input.mp4 文件的音量调大 10dB，输出到 output.mp4 文件中。
 
