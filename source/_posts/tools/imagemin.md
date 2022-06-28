@@ -24,7 +24,7 @@ import { getAllFiles } from 'get-all-files';
 const handleFile = async (sourcePath) => {
   // 如果图片 width > 750，先等比缩小图片宽高
   if (images(sourcePath).width() > 375 * 2) {
-    const fileType = path.extname(sourcePath).replace('.', '');
+    const fileType = path.extname(sourcePath).replace('.', '').toLowerCase();
 
     const buffer = await imagemin.buffer(
       images(sourcePath)
@@ -40,7 +40,7 @@ const handleFile = async (sourcePath) => {
       }
     );
 
-    const destinationPath = path.join('./build', path.basename(sourcePath));
+    const destinationPath = path.join('./build', path.basename(sourcePath).toLowerCase());
 
     await fsPromises.mkdir(path.dirname(destinationPath), { recursive: true });
 
@@ -48,7 +48,7 @@ const handleFile = async (sourcePath) => {
     return;
   }
 
-  await imagemin(sourcePath, {
+  await imagemin([sourcePath], {
     destination: 'build', // 结果输出到 build 目录
     plugins: [
       imageminJpegtran(),
@@ -66,7 +66,7 @@ getAllFiles('./images')
     return paths
       .map((it) => convertToUnixPath(it)) // 将 Windows 的 "\\" 路径转为 "/"
       .filter((it) => {
-        const ext = path.extname(it);
+        const ext = path.extname(it).toLowerCase();
 
         return ['.jpg', '.jpeg', '.png'].includes(ext); // 筛选出 .jpg, .jpeg, .png 后缀的文件
       });
