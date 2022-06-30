@@ -8,13 +8,13 @@ categories:
 ## node.js 图片压缩
 
 ```bash
-npm install -D images imagemin imagemin-jpegtran imagemin-pngquant slash get-all-files
+npm install -D images imagemin imagemin-mozjpeg imagemin-pngquant slash get-all-files
 ```
 
 ```js
 import images from 'images';
 import imagemin from 'imagemin';
-import imageminJpegtran from 'imagemin-jpegtran';
+import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
 import fsPromises from 'fs/promises';
 import path from 'path';
@@ -22,17 +22,17 @@ import convertToUnixPath from 'slash';
 import { getAllFiles } from 'get-all-files';
 
 const handleFile = async (sourcePath) => {
-  // 如果图片 width > 750，先等比缩小图片宽高
+  // 如果图片 width > 750，等比缩小图片宽高
   if (images(sourcePath).width() > 375 * 2) {
     const fileType = path.extname(sourcePath).replace('.', '').toLowerCase();
 
     const buffer = await imagemin.buffer(
       images(sourcePath)
-        .size(375 * 2) // 调整图片的宽高
+        .size(375 * 2) // 调整图片的宽度，高度会等比缩小
         .toBuffer(fileType),
       {
         plugins: [
-          imageminJpegtran(),
+          imageminMozjpeg({ quality: 70 }),
           imageminPngquant({
             quality: [0.6, 0.8],
           }),
@@ -48,13 +48,14 @@ const handleFile = async (sourcePath) => {
     return;
   }
 
+  // --- 纯粹的图片大小压缩 ---
   await imagemin([sourcePath], {
     destination: 'build', // 结果输出到 build 目录
     plugins: [
-      imageminJpegtran(),
+      imageminMozjpeg({ quality: 70 }), // 压缩 jpg
       imageminPngquant({
         quality: [0.6, 0.8],
-      }),
+      }), // 压缩 png
     ],
   });
 };
