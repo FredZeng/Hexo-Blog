@@ -3,8 +3,6 @@ title: 使用 GitHub Actions 自动化构建/部署 GitHub Page
 date: 2021-11-24
 ---
 
-## 使用 GitHub Actions 自动化构建/部署 GitHub Page
-
 ```yml
 # .github/workflows/deploy.yml
 name: Deploy Blog

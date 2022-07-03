@@ -5,8 +5,6 @@ categories:
 - media
 ---
 
-## Media PlayType Support Detect
-
 [online demo](https://fredzeng.github.io/demo/playtype.html)
 
 ### Support built-in HLS

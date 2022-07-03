@@ -5,8 +5,6 @@ categories:
 - webpack
 ---
 
-## Webpack 杂记
-
 1. 关于为什么使用 `await import('@/common/themes/' + window.mode)` 时，会把 `@/common/themes` 目录下的其他文件（如，markdown 文件）也打包进 chunk！
 
 根据 [webpack官方文档](https://webpack.docschina.org/guides/dependency-management/#require-with-expression) 的解释：

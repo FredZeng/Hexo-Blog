@@ -5,8 +5,6 @@ categories:
 - tools
 ---
 
-## node.js 图片压缩
-
 ```bash
 npm install -D images imagemin imagemin-mozjpeg imagemin-pngquant slash get-all-files
 ```

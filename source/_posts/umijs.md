@@ -3,8 +3,6 @@ title: UmiJS
 date: 2022-04-15
 ---
 
-## UmiJS
-
 ### 图片压缩
 
 打包时使用 `image-webpack-loader` 压缩图片

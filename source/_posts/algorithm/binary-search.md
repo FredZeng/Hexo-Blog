@@ -5,8 +5,6 @@ categories:
 - algorithm
 ---
 
-## 二分查找
-
 ### 基本的二分搜索
 
 ```js

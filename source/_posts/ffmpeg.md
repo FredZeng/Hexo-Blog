@@ -5,8 +5,6 @@ date: 2021-11-08
 
 [flv.js Demo](http://bilibili.github.io/flv.js/demo/)
 
-## ffmpeg 速记
-
 1. 将视频转为浏览器可以播放的 mp4 视频
 
 ```bash

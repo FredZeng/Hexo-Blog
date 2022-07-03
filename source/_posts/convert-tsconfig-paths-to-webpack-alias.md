@@ -3,8 +3,6 @@ title: Convert TSConfig paths to Webpack alias
 date: 2021-12-22
 ---
 
-## Convert TSConfig paths to Webpack alias
-
 Inspired by [marzelin/convert-tsconfig-paths-to-webpack-aliases](https://github.com/marzelin/convert-tsconfig-paths-to-webpack-aliases).
 
 ```js

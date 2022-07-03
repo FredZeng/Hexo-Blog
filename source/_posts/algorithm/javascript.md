@@ -5,8 +5,6 @@ categories:
 - algorithm
 ---
 
-## JavaScript 算法常用语法
-
 1. 除2取整
 
 ```js

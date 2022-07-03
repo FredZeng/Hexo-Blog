@@ -3,8 +3,6 @@ title: 使用 jsDelivr 来加速你的博客
 date: 2021-11-24
 ---
 
-## 使用 jsDelivr 来加速你的博客
-
 [jsDelivr](https://www.jsdelivr.com/?docs=gh) 为开源项目提供了免费的 CDN 服务，我们可以使用 jsDelivr 来给我们的 GitHub Page 静态资源提供 CDN 服务。
 
 - 用法：

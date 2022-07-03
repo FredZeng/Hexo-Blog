@@ -3,8 +3,6 @@ title: Git 速记
 date: 2021-11-19
 ---
 
-## Git 速记
-
 1. 批量重置 commit author
 
 ```bash
