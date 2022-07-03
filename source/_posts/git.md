@@ -3,7 +3,30 @@ title: Git 速记
 date: 2021-11-19
 ---
 
-1. 批量重置 commit author
+
+- 添加/修改远程仓库地址
+
+```bash
+# 添加仓库地址
+git remote add [shortname] [url]
+
+# 修改仓库地址
+git remote set-url [shortname] [url]
+```
+
+- 修改最近一次 commit 的 message
+
+```bash
+git commit --amend
+```
+
+- 修改最近一次 commit 的作者信息
+
+```bash
+git commit --amend --author "xxx <xxx@abc.com>"
+```
+
+- 批量重置 commit author
 
 ```bash
 #!/bin/sh
@@ -27,23 +50,13 @@ fi
 ' --tag-name-filter cat -- --branches --tags
 ```
 
-2. 创建一个全新的分支，没有历史记录
+- 创建一个全新的分支，没有历史记录
 
 ```bash
 git checkout --orphan <branch>
 ```
 
-3. 添加/修改远程仓库地址
-
-```bash
-# 添加仓库地址
-git remote add [shortname] [url]
-
-# 修改仓库地址
-git remote set-url [shortname] [url]
-```
-
-4. 全局配置 GitHub token
+- 全局配置 GitHub token
 
 GitHub 不再支持 "用户名 + 密码" 的登录方式，推荐使用 GitHub token 来进行鉴权；
 给每个 clone 下来的项目单独配置 token 过于繁琐，可以使用以下方式全局配置 GitHub token。
