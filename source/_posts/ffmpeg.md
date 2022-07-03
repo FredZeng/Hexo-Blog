@@ -5,6 +5,8 @@ date: 2021-11-08
 
 [flv.js Demo](http://bilibili.github.io/flv.js/demo/)
 
+### 视频
+
 1. 将视频转为浏览器可以播放的 mp4 视频
 
 ```bash
@@ -27,22 +29,13 @@ ffmpeg -i index.m3u8 -c copy output.mp4
 ffmpeg -i input.mp4 -c copy -movflags faststart output.mp4
 ```
 
-4. 抽取音视频文件中的 AAC 音频流
-
-```bash
-ffmpeg -i input.mp4 -vn -acodec copy output.aac
-```
-
-- `-vn` 忽略视频流
-- `-an` 忽略音频流
-
-5. 以文件的形式保存 flv （直播）流
+4. 以文件的形式保存 flv （直播）流
 
 ```bash
 ffmpeg -i http://xxx.com/live.flv -c copy -f flv output.flv
 ```
 
-6. 以 CSV 格式输出视频流的帧信息
+5. 以 CSV 格式输出视频流的帧信息
 
 ```bash
 ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
@@ -73,8 +66,50 @@ ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
 
 IDR frame: pict_type=I 且 key_frame=1 时，表示这是 IDR frame.
 
+### 音频
 
-7. 增大/减小 MP4 的音量
+1. 抽取音视频文件中的 AAC 音频流
+
+```bash
+ffmpeg -i input.mp4 -vn -acodec copy output.aac
+```
+
+- `-vn` 忽略视频流
+- `-an` 忽略音频流
+
+2. 将 m4a 转为 mp3
+
+```bash
+ffmpeg -i abc.m4a -y -c:a libmp3lame -aq 0 abc.mp3
+```
+
+批量转换脚本：
+
+```bash
+#!/bin/bash
+
+for i in *.m4a ; do
+  ffmpeg -i "$i" -y -c:a libmp3lame -aq 0 "${i%.*}.mp3"
+done
+```
+
+3. 将 mp3 转为 ogg
+
+```bash
+ffmpeg -i abc.mp3 -y -c:a libvorbis abc.ogg
+```
+
+批量转换脚本：
+
+```bash
+#!/bin/bash
+
+for i in *.mp3 ; do
+  ffmpeg -i "$i" -y -c:a libvorbis "${i%.*}.ogg"
+done
+```
+
+4. 增大/减小 MP4 的音量
 
 将 input.mp4 文件的音量调大 10dB，输出到 output.mp4 文件中。
 
