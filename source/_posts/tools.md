@@ -14,3 +14,7 @@ date: 2022-07-06
 - 在线压缩 svg
 
 <https://www.zhangxinxu.com/sp/svgo/>
+
+- 在线分析 mp4
+
+<https://gpac.github.io/mp4box.js/test/filereader.html>
