@@ -15,6 +15,10 @@ date: 2022-07-06
 
 <https://www.zhangxinxu.com/sp/svgo/>
 
+- 在线压缩图片
+
+<https://fengyuanchen.github.io/compressorjs/>
+
 - 在线分析 mp4
 
 <https://gpac.github.io/mp4box.js/test/filereader.html>
