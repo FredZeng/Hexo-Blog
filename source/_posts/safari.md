@@ -3,8 +3,6 @@ title: iOS webview 调试
 date: 2022-11-28
 ---
 
-## iOS webview 调试
-
 1. 在 iOS 设备上，依次打开 “设置” -> “Safari浏览器” -> “高级” -> 开启 “JavaScript” 和 “网页检查器”
 
 ![](/images/iOS1.png)
