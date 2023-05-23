@@ -13,3 +13,9 @@ netstat -ano|findstr "13800"
 
   + [git 显示中文和解决中文乱码](https://zhuanlan.zhihu.com/p/133706032)
   + [git status 中文乱码问题](https://www.jianshu.com/p/6792dbc102d6)
+
+- 刷新本地DNS缓存
+
+```cmd
+ipconfig /flushdns
+```
