@@ -38,7 +38,7 @@ ffmpeg -i http://xxx.com/live.flv -c copy -f flv output.flv
 5. 以 CSV 格式输出视频流的帧信息
 
 ```bash
-ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv
+ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv 2>&1
 ```
 
 - `-show_frames` 查看每一帧信息
