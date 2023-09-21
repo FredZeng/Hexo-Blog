@@ -60,7 +60,7 @@ ffprobe -loglevel level -hide_banner -unit -show_frames -select_streams v -show_
 
 ffplay 和 ffprobe 只能告诉我们哪个时间点，或者哪一帧出了问题，但具体是什么问题还是需要我们深入分析 flv 流/文件；
 
-此处推荐使用 [flvAnalyser](https://github.com/zymill/flvAnalyser)，一个可视化的 flv 分析工具；该工具支持 H.264 和 H.265；
+此处推荐使用 [flvAnalyser](https://github.com/zymill/flvAnalyser)，一个可视化的 flv 分析工具；该工具支持 H.264 和 H.265，可以查看到具体的 nalu；
 
 
 
