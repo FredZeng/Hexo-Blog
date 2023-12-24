@@ -107,7 +107,7 @@ H5 视频字幕与普通的视频字幕相类似，也可以分为硬字幕和�
 
 H5 并不会从 mp4 视频中解析并显示内挂字幕，但它支持通过使用 `<track>` 元素为视频指定外挂字幕；外挂字幕的文件格式为 WebVTT，其文件名后缀一般为 `.vtt`，其 MIME 类型为 `text/vtt`；
 
-在Chrome和Firefox浏览器下，.vtt字幕是可以无障碍加载显示的，但是对于IE10+浏览器，虽然也支持.vtt字幕，但是需要定义MIME type，否则会无视WebVTT格式。
+在 Chrome 和 Firefox 浏览器下，.vtt 字幕是可以无障碍加载显示的，但是对于IE10+浏览器，虽然也支持.vtt字幕，但是需要定义 MIME type，否则会无视WebVTT格式。
 
 为`<video>`添加多个字幕：
 
@@ -192,4 +192,4 @@ You're lucky your blood's still flowing.
 
 在 video.js 中，提供了 TextTrackDisplay 组件来显示字幕；它将字幕内容渲染在 div 中，并以绝对定位的方式覆盖到视频上，使得我们可以修改所有的 CSS 属性。
 
-缺点：部分移动端浏览器（如 iOS 浏览器、部分华为系统浏览器），全屏后会被系统劫持播放器样式，导致自定义播放器组件不显示，引起字幕不显示的问题；因此，在video.js的字幕实现中，会根据 user-agent 选择使用原生或 TextTrackDisplay 组件来显示字幕。
+缺点：部分移动端浏览器（如 iOS 浏览器、部分华为系统浏览器），全屏后会被系统劫持播放器样式，导致自定义播放器组件不显示，引起字幕不显示的问题；因此，在 video.js 的字幕实现中，会根据 user-agent 选择使用原生或 TextTrackDisplay 组件来显示字幕。
