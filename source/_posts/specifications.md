@@ -5,7 +5,7 @@ date: 2023-01-28
 
 ## 常见音视频协议标准
 
-- [各种音视频协议标准](https://ossrs.io/lts/en-us/docs/v5/tools/specs)
+- [各种音视频协议标准](https://ossrs.io/lts/zh-cn/docs/v5/tools/specs)
 - [H.264](https://www.itu.int/rec/T-REC-H.264/en)
 - [H.265](https://www.itu.int/rec/T-REC-H.265/en)
 - [FLV](http://download.macromedia.com/f4v/video_file_format_spec_v10_1.pdf)
@@ -14,3 +14,6 @@ date: 2023-01-28
 
 - [FLV 分析工具：FlvAnalyser](https://github.com/zymill/flvAnalyser)
 - [HLS 分析工具：EasyICE](https://easyice.cn/archives/85)
+- [H264BSAnalyzer](https://github.com/latelee/H264BSAnalyzer/tree/master/release)
+- [mp4explorer](https://mp4-explorer.apponic.com/)
+- [mp4info](#)
