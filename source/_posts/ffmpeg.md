@@ -35,7 +35,15 @@ ffmpeg -i input.mp4 -c copy -movflags faststart output.mp4
 ffmpeg -i http://xxx.com/live.flv -c copy -f flv output.flv
 ```
 
-5. 以 CSV 格式输出视频流的帧信息
+5. 将云端 hls 保存为 mp4
+
+```bash
+ffmpeg -protocol_whitelist "file,http,https,tcp,tls" -i "https://xxx.com/live.m3u8" -c copy output.mp4
+```
+
+- `-protocol_whitelist "file,http,https,tcp,tls"` 默认情况下，ffmpeg 只允许使用一些常见的协议，通过该选项可以指定允许使用的协议白名单
+
+6. 以 CSV 格式输出视频流的帧信息
 
 ```bash
 ffprobe -show_frames -select_streams v -of csv abc.flv > abc.csv 2>&1
