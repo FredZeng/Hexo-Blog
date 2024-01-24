@@ -1,0 +1,9 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXT-X-TARGETDURATION:11
+#EXTINF:10.000,
+https://fredzeng.github.io/testcases/193039199_mp4_h264_aac_hd_7_462.ts
+#EXTINF:10.000,
+https://fredzeng.github.io/testcases/193039199_mp4_h264_aac_hd_7_463.ts
+#EXT-X-ENDLIST
