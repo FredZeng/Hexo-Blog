@@ -56,6 +56,12 @@ fi
 git checkout --orphan <branch>
 ```
 
+- 加速 clone 项目
+
+```bash
+git clone --depth 1 <url>
+```
+
 - 全局配置 GitHub token
 
 GitHub 不再支持 "用户名 + 密码" 的登录方式，推荐使用 GitHub token 来进行鉴权；
