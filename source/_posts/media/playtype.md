@@ -7,6 +7,10 @@ categories:
 
 [online demo](https://fredzeng.github.io/demo/playtype.html)
 
+### Check Browser Media MIME Support
+
+<https://cconcolato.github.io/media-mime-support/>
+
 ### Support built-in HLS
 
 Based on [flv.js](https://github.com/bilibili/flv.js/blob/master/src/core/features.js#L43).
