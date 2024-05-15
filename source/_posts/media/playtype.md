@@ -11,6 +11,10 @@ categories:
 
 <https://cconcolato.github.io/media-mime-support/>
 
+### Chrome 所支持的 Audio/Video 格式
+
+<https://www.chromium.org/audio-video/#codec-and-container-support>
+
 ### Support built-in HLS
 
 Based on [flv.js](https://github.com/bilibili/flv.js/blob/master/src/core/features.js#L43).
