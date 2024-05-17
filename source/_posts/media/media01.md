@@ -169,9 +169,7 @@ Network 面板中的 http 连接断开
 
 ### 如何正确使用 flv.js 实现低延迟？
 
-## 如何极致实践低延迟
-
-### 1、关闭 `enableStashBuffer: false` 下载缓冲区配置
+#### 1、关闭 `enableStashBuffer: false` 下载缓冲区配置
 
 通过设置 `enableStashBuffer: false`，我们可以关闭 flv.js 的下载缓冲区；
 
@@ -183,7 +181,7 @@ Network 面板中的 http 连接断开
 
 建议：纯内网情况下网络抖动的风险较低
 
-### 2、开启 `liveBufferLatencyChasing: true` 跳帧配置
+#### 2、开启 `liveBufferLatencyChasing: true` 跳帧配置
 
 除了 **ArrayBuffer** 这个下载用的缓冲区，`<video>` 本身也有自己的播放缓冲区，通过 `video.buffered` 可以查看当前缓冲了的范围；
 
