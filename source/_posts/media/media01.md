@@ -53,13 +53,13 @@ Web 前端在上述的场景中，主要是负责播放不同协议的流媒体�
 在 `flv.js`, `mpegts.js` 这些库的实现中：
 
 - flv 流的加载可以基于 [Fetch API](https://developer.mozilla.org/zh-CN/docs/Web/API/fetch) 实现
-- 为了能让浏览器播放 flv 流，开发者还需要将 flv 流 解封装 -> 转封装为 fMP4（只改变了流媒体资源的封装格式）
+- 为了能让浏览器播放 flv 流，库开发者还需要将 flv 流 解封装 -> 转封装为 fMP4（只改变了流媒体资源的封装格式）
 - 转封装后的 fMP4 流媒体数据，需要利用 [MSE API](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API) 塞进原生 `<video>`
-- 最终由浏览器完成对 fMP4 的解码、渲染、播放
+- 最终由浏览器 `<video>` 完成对 fMP4 的解码、渲染、播放
 
 在大多数时候，我们都是作为 `flv.js`, `mpegts.js` 这些库的使用方；
 
-
+以直播业务为例，一般前端会得到一个 http-flv 流地址，然后使用 `flv.js` 来播放；
 
 ---
 
