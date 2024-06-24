@@ -2,9 +2,7 @@
 title: 移动端音视频开发踩过的坑
 ---
 
-## 移动端音视频开发踩过的坑
-
-### 1、DOM 同时监听 `touchend` 和 `mousedown` 会依次触发 `touchend -> mousedown`
+## 1、DOM 同时监听 `touchend` 和 `mousedown` 会依次触发 `touchend -> mousedown`
 
 最小复现 Demo:
 
@@ -43,7 +41,7 @@ div.addEventListener('touchend', onClick);
 ```
 
 
-### 2、`HTMLMediaElement.fastSeek()` 和 `HTMLMediaElement.currentTime` 精度不一致
+## 2、`HTMLMediaElement.fastSeek()` 和 `HTMLMediaElement.currentTime` 精度不一致
 
 在使用 `<video>` 播放点播视频时，我们可以通过 `HTMLMediaElement.currentTime` 来改变播放进度，其使用方式一般为：`video.currentTime = 10.5`；
 
@@ -68,7 +66,7 @@ video.fastSeek(10.320); // 期望跳到 10.320
 正如上面的例子所示，使用 `HTMLMediaElement.fastSeek()` 设置播放进度，由于精度可能会被丢弃，播放器的进度条在显示的时候可能会出现"**回跳**"的现象。
 
 
-### 3、Safari - Element 级别的自动播放策略
+## 3、Safari - Element 级别的自动播放策略
 
 原文：<https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>
 
@@ -82,14 +80,13 @@ video.fastSeek(10.320); // 期望跳到 10.320
 
 然而，Safari 的自动播放策略则是针对**单个媒体元素**生效的（元素级别）：
 
-- 用户和一个媒体元素有过交互后，该媒体元素后续无论如何改变播放源（src），都可以自动播放；
-
-- 但如果再新创建一个媒体元素，该媒体元素还是无法自动播放，仍需要用户交互；
+- 用户和一个媒体元素有过交互后，该媒体元素后续无论如何改变播放源（src），都可以自动播放
+- 但如果再新创建一个媒体元素，该媒体元素还是无法自动播放，仍需要用户交互
 
 这就意味着，如果我们想要在 Safari 中连续/切换播放多个视频时保持自动播放，我们就应该尽可能复用同一个媒体元素（`<video>`、`<audio>`），而不是不断去替换媒体元素 ———— 在使用 React 或 Vue 开发时我们应该注意这一点。
 
 
-### 4、iOS Safari 不支持设置音量
+## 4、iOS Safari 不支持设置音量
 
 在 iOS Safari 中是无法通过 `HTMLMediaElement.volume` 来设置音量大小的，该表现在 [MDN文档](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume) 中也有所描述：
 
