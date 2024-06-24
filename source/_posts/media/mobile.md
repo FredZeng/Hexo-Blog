@@ -87,3 +87,41 @@ video.fastSeek(10.320); // 期望跳到 10.320
 - 但如果再新创建一个媒体元素，该媒体元素还是无法自动播放，仍需要用户交互；
 
 这就意味着，如果我们想要在 Safari 中连续/切换播放多个视频时保持自动播放，我们就应该尽可能复用同一个媒体元素（`<video>`、`<audio>`），而不是不断去替换媒体元素 ———— 在使用 React 或 Vue 开发时我们应该注意这一点。
+
+
+### 4、iOS Safari 不支持设置音量
+
+在 iOS Safari 中是无法通过 `HTMLMediaElement.volume` 来设置音量大小的，该表现在 [MDN文档](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume) 中也有所描述：
+
+![](/images/media-volume.png)
+
+> iOS Safari 通过 `HTMLMediaElement.volume` 设置的音量大小并不会在媒体元素上生效
+>
+> iOS Safari 通过 `HTMLMediaElement.volume` 获取到的音量大小值永远是 1
+
+在 iOS Safari 中，我们能修改的是 `HTMLMediaElement.muted`，切换媒体元素的静音状态。
+
+最小复现 Demo（在 iOS 中打开）:
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <video controls autoplay></video>
+    <script>
+      var video = document.querySelector('video');
+      video.src = '';
+
+      video.addEventListener('play', () => {
+        setTimeout(() => {
+          video.volume = 0.2; // 3s 后尝试将音量大小修改为 0.2
+        }, 3000);
+
+        setTimeout(() => {
+          console.log('volume:', video.volume); // 5s 后打印当前音量大小，返回的应该还是 1
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
+```
