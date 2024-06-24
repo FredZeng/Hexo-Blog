@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div style="width: 100px; height: 100px; background-color: red;"></div>
+    <script>
+      var div = document.querySelector('div');
+
+      function onClick(evt) {
+        console.log(evt.type);
+      }
+
+      div.addEventListener('mousedown', onClick);
+      div.addEventListener('touchend', onClick);
+    </script>
+  </body>
+</html>

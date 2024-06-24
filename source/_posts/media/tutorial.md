@@ -30,3 +30,7 @@ categories:
 
 1. 参照《MP4 播放失败》收集错误信息
 2. 查看 WebRTC 日志：<chrome://webrtc-internals/>、<chrome://webrtc-logs/>
+
+## 在 Safari 中调试媒体
+
+<https://webkit.org/blog/8923/debugging-media-in-web-inspector/>
